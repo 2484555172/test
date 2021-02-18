@@ -1,13 +1,18 @@
 #pragma once
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-#define ROW 3
-#define COL 3
 
+#define ROW 9
+#define COL 9
 
-void Initboard(char board[ROW][COL],int row, int col);
-void Playboard(char board[ROW][COL], int row, int col);
-void PlayerMove(char board[ROW][COL], int row, int col);
-void ComputerMove(char board[ROW][COL], int row, int col);
-char IsWin(char board[ROW][COL], int row, int col);
+#define ROWS ROW+2
+#define COLS COL+2
+
+#define easy_count 10
+
+void Initboard(char board[ROWS][COLS],int rows,int cols,char ch);
+void Displayboard(char board[ROWS][COLS],int row,int col);
+void SetMine(char board[ROWS][COLS],int row,int col);
+void Sweep_Mine(char mine[ROWS][COLS],char show[ROWS][COLS], int row, int col);

@@ -1,53 +1,69 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include"game.h"
-            //≤‚ ‘…®¿◊
-void menu()
-{
-	printf("**********************\n");
-	printf("***    1.play      ***\n");
-	printf("***    0.exit      ***\n");
-	printf("**********************\n");
+#define _CRT_SECURE_NO_WARNINGS
+ 
+#include<stdio.h> 
+#include<string.h> 
+#include<stdlib.h> 
+#include<inttypes.h>
+#include<math.h>
+//***4.8±‡≥Ã¡∑œ∞****
+//1.
+//int main(void)
+//{
+//	char arr1[20] = {0};
+//	char arr2[20] = {0};
+//	printf("«Î ‰»Îƒ˙µƒ√˚£∫");
+//	scanf("%s", &arr1);
+//	printf("«Î ‰»Îƒ˙µƒ–’£∫");
+//	scanf("%s", &arr2);
+//	printf("%s %s", arr1, arr2);
+//
+//	return 0;
+//}
 
-}
-void game()
-{
-	char mine[ROWS][COLS] = { 0 };
-	char show[ROWS][COLS] = { 0 };
-	Initboard(mine,ROWS,COLS,'0');
-	Initboard(show, ROWS, COLS, '*');
-	//Displayboard(mine,ROW,COL);
-	Displayboard(show, ROW, COL);
-	SetMine(mine, ROW, COL);//≤º÷√¿◊
-	//Displayboard(mine,ROW,COL);
-	Sweep_Mine(mine,show, ROW, COL);
+//2.
+//int main(void)
+//{
+//	int len = 0;
+//	char name[20];
+//
+//	printf("Please enter your name:");
+//	scanf("%19s", name);
+//	len = strlen(name);
+//	printf("Print your name:\n");
+//	printf("a.\"%s\"\n", name);
+//	printf("b.\"%20s\"\n", name);
+//	printf("c.\"%-20s\"\n", name);
+//	printf("d.%*s\n", len + 3, name);
+//
+//	return 0;
+//}
 
-}
-void Test()
-{
-	srand((unsigned int)time(NULL));
-	int input;
-	char ch;
-	do
-	{
-		menu();
-		printf("«Î—°‘Ò:>");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			game();
-			break;
-		case 0:
-			printf("ÕÀ≥ˆ”Œœ∑\n");
-			break;
-		default:
-			printf("—°‘Ò¥ÌŒÛ£¨«Î÷ÿ–¬—°‘Ò!!!\n");
-			break;
-		}
-	} while (input);
-}
-int main(void)
-{
-	Test();
-	return 0;
-}
+//3.
+//int main(void)
+//{
+//	float i;
+//	printf("«Î ‰»Î>:");
+//	scanf("%f", &i);
+//	printf("a. ‰»Î %.3f ªÚ %E ",i,i);
+//	return 0;
+//}
+
+//4.
+//int main(void)
+//{
+//	int len = 0;
+//	char name[20];
+//
+//	printf("Please enter your name:");
+//	scanf("%19s", name);
+//	len = strlen(name);
+//	printf("Print your name:\n");
+//	printf("a.\"%s\"\n", name);
+//	printf("b.\"%20s\"\n", name);
+//	printf("c.\"%-20s\"\n", name);
+//	printf("d.%*s\n", len + 3, name);
+//
+//	return 0;
+//}
+
+//5.

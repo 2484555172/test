@@ -5,65 +5,155 @@
 #include<stdlib.h> 
 #include<inttypes.h>
 #include<math.h>
-//***4.8编程练习****
+/****6.16编程练习****/
 //1.
+//#define LEN 26
 //int main(void)
 //{
-//	char arr1[20] = {0};
-//	char arr2[20] = {0};
-//	printf("请输入您的名：");
-//	scanf("%s", &arr1);
-//	printf("请输入您的姓：");
-//	scanf("%s", &arr2);
-//	printf("%s %s", arr1, arr2);
-//
+//	char arr[LEN];
+//	int n = 0;
+//	while (n < LEN)
+//	{
+//		arr[n] = 'a' + n;
+//		n++;
+//	}
+//	for (n = 0; n < LEN; n++)
+//	{
+//		printf("%c ", arr[n]);
+//	}
 //	return 0;
 //}
 
 //2.
 //int main(void)
 //{
-//	int len = 0;
-//	char name[20];
-//
-//	printf("Please enter your name:");
-//	scanf("%19s", name);
-//	len = strlen(name);
-//	printf("Print your name:\n");
-//	printf("a.\"%s\"\n", name);
-//	printf("b.\"%20s\"\n", name);
-//	printf("c.\"%-20s\"\n", name);
-//	printf("d.%*s\n", len + 3, name);
-//
+//	char ch = '$';
+//	int i;
+//	int j;
+//	for (i = 1; i <= 5; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%c", ch);
+//		}
+//	printf("\n");
+//	printf(" \n");
+//	}
 //	return 0;
 //}
 
 //3.
 //int main(void)
 //{
-//	float i;
-//	printf("请输入>:");
-//	scanf("%f", &i);
-//	printf("a.输入 %.3f 或 %E ",i,i);
+//	char ch = 'F';
+//	int i;
+//	int j;
+//	for (i = 0; i < 6; i++)
+//	{
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf("%c", ch - j);
+//		}
+//	printf("\n");
+//	printf(" \n");
+//	}
 //	return 0;
 //}
 
 //4.
 //int main(void)
 //{
-//	int len = 0;
-//	char name[20];
-//
-//	printf("Please enter your name:");
-//	scanf("%19s", name);
-//	len = strlen(name);
-//	printf("Print your name:\n");
-//	printf("a.\"%s\"\n", name);
-//	printf("b.\"%20s\"\n", name);
-//	printf("c.\"%-20s\"\n", name);
-//	printf("d.%*s\n", len + 3, name);
-//
+//	char ch = 'A';
+//	int i;
+//	int j;
+// 	for (i = 0; i < 6; i++)
+//	{
+//		
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf("%c",ch++);
+//		}
+//	printf("\n");
+//	printf(" \n");
+//	}
 //	return 0;
 //}
 
 //5.
+//int main(void)
+//{
+//	
+//	char ch;
+//	int i, j,len;
+//	printf("请输入大写字母 >：");
+//	scanf("%c", &ch);
+//	len = ch - 'A';
+//	for (i = 0; i <= len; i++)
+//	{
+//		char t = 'A' - 1;
+//		for (j = 0; j < len - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf("%c", ++t);
+//		}
+//		for (j = 0; j < i; j++)
+//		{
+//			printf("%c", --t);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//6.
+//int main(void)
+//{
+//	int i;
+//	int max, min;
+//	printf("Please enter max>:");
+//	scanf("%d", &max);
+//	printf("Please enter min>:");
+//	scanf("%d", &min);
+//	for (i = min; i <= max; i++)
+//	{
+//		printf("%d %d %d", i, i*i, i*i*i);
+//	}
+//	return 0;
+//}#include <stdio.h>
+
+//7.
+//#define len 20
+//int main(void)
+//{
+//	int i;
+//	char str[len];
+//	scanf("%s", str);
+//	for (i = strlen(str) - 1; i >= 0; i--)
+//	{
+//		printf("%c", str[i]);
+//	}
+//	return 0;
+//}
+#include <stdio.h>
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{
+	float y, x, z, f;
+	for (y = 1.5f; y > -1.5f; y -= 0.1f)
+	{
+		for (x = -1.5f; x < 1.5f; x += 0.05f)
+		{
+			z = x * x + y * y - 1;
+			f = z * z*z - x * x*y*y*y;
+			putchar(f <= 0.0f ? "*********"[(int)(f*-8.0f)] : ' ');
+		}
+		putchar('\n');
+	}
+	return 0;
+}
+

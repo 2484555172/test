@@ -1,97 +1,30 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
+
 #include"game.h"
 
-void Initboard(char board[ROWS][COLS], int rows, int cols,char ch)
-{
-	int i, j;
-	for (i = 0; i < rows; i++)
-	{
-		for (j = 0; j < cols; j++)
-		{
-			board[i][j] = ch;
-		}
-	}
-}
 
-void Displayboard(char board[ROWS][COLS], int row, int col)
+void PLAY_game()
 {
-	int i, j;
-	for (i = 0; i <= 9; i++)
+	int n = 0;
+	int num;
+	n = rand() % 100 + 1;
+	while (1)
 	{
-		printf("%d ", i);
-	}
-	printf("\n");
-	for (i = 1; i <= row; i++)
-	{
-		printf("%d ", i);//行号
-		for (j = 1; j <= col; j++)
+		printf("请猜一个1~100的数:>");
+		scanf("%d", &num);
+		if (num < n)
 		{
-			printf("%c ", board[i][j]);
+			printf("猜小了!\n");
 		}
-		printf("\n");
-	}
-}
-void SetMine(char board[ROWS][COLS], int row, int col)
-{
-	int x, y;
-	int count = easy_count;
-	while (count)
-	{
-		x = rand() % row + 1;
-		y = rand() % col + 1;
-		if (board[x][y] == '0')
+		else if (num > n)
 		{
-			board[x][y] = '1';
-			count--;
-		}
-	}
-}
-int count_mine(char mine[ROWS][COLS], int x, int y)
-{
-	return mine[x][y - 1] +
-		mine[x - 1][y - 1] +
-		mine[x - 1][y] +
-		mine[x - 1][y + 1] +
-		mine[x][y + 1] +
-		mine[x + 1][y + 1] +
-		mine[x + 1][y] +
-		mine[x + 1][y - 1] - 8 * '0';
-
-}
-void Sweep_Mine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
-{
-	int x = 0;
-	int y = 0;
-	int Win = 0;
-	while (Win < ROW*COL - easy_count)
-	{
-		printf("请输入要扫的坐标:>");
-		scanf("%d%d", &x, &y);
-		if (x >= 1 && x <= row && y >= 1 && y <= col)
-		{
-			if (mine[x][y] == '1')
-			{
-				printf("很遗憾，你被炸死了。\n");
-				Displayboard(mine, ROW, COL);
-				break;
-			}
-			else
-			{
-				int Count = count_mine(mine, x, y);
-				show[x][y] = Count + '0';
-				Displayboard(show, ROW, COL);
-				Win++;
-			}
+			printf("猜大了!\n");
 		}
 		else
 		{
-			printf("输入非法，请重新输入！！！\n");
-		
+			printf("恭喜你,猜对啦.!!!\n");
+			break;
 		}
 	}
-	if (Win == ROW * COL - easy_count)
-	{
-		printf("恭喜你，扫雷成功！\n");
-	}
-
 }

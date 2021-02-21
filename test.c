@@ -1,159 +1,113 @@
 #define _CRT_SECURE_NO_WARNINGS
- 
-#include<stdio.h> 
-#include<string.h> 
-#include<stdlib.h> 
-#include<inttypes.h>
-#include<math.h>
-/****6.16编程练习****/
-//1.
-//#define LEN 26
-//int main(void)
-//{
-//	char arr[LEN];
-//	int n = 0;
-//	while (n < LEN)
-//	{
-//		arr[n] = 'a' + n;
-//		n++;
-//	}
-//	for (n = 0; n < LEN; n++)
-//	{
-//		printf("%c ", arr[n]);
-//	}
-//	return 0;
-//}
+#include<stdio.h>
 
-//2.
+
+
+//***循环****//
+//2.84
 //int main(void)
 //{
-//	char ch = '$';
-//	int i;
-//	int j;
-//	for (i = 1; i <= 5; i++)
+//	int n;
+//	int i, j;
+//	char ch = '*';
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)
 //	{
-//		for (j = 1; j <= i; j++)
+//		for (j = 0; j < n; j++)
 //		{
 //			printf("%c", ch);
 //		}
-//	printf("\n");
-//	printf(" \n");
+//    	printf("\n");
 //	}
 //	return 0;
 //}
 
-//3.
+//2.85
 //int main(void)
 //{
-//	char ch = 'F';
-//	int i;
-//	int j;
-//	for (i = 0; i < 6; i++)
+//	int n;
+//	int i, j;           
+//		               
+//	char ch = '*';      
+//	scanf("%d", &n); 
+//	for (i = 1; i <= n; i++)
 //	{
-//		for (j = 0; j <= i; j++)
+//		for (j = 1; j <= n - i; j++)
 //		{
-//			printf("%c", ch - j);
+//			printf(" ");
 //		}
-//	printf("\n");
-//	printf(" \n");
+//	    for (j = 1; j <= n; j++)
+//	    {
+//		    printf("%c", ch);
+//		}	
+//	    printf("\n");
 //	}
-//	return 0;
+//	return 0;    
 //}
 
-//4.
+//2.86
 //int main(void)
-//{
-//	char ch = 'A';
-//	int i;
-//	int j;
-// 	for (i = 0; i < 6; i++)
+//{	
+//	char ch = '*';
+//	int i, j, n;
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)
 //	{
-//		
-//		for (j = 0; j <= i; j++)
-//		{
-//			printf("%c",ch++);
-//		}
-//	printf("\n");
-//	printf(" \n");
-//	}
-//	return 0;
-//}
-
-//5.
-//int main(void)
-//{
-//	
-//	char ch;
-//	int i, j,len;
-//	printf("请输入大写字母 >：");
-//	scanf("%c", &ch);
-//	len = ch - 'A';
-//	for (i = 0; i <= len; i++)
-//	{
-//		char t = 'A' - 1;
-//		for (j = 0; j < len - i; j++)
+//		for (j = 0; j < n-i; j++)//n-i为每行空格数
 //		{
 //			printf(" ");
 //		}
 //		for (j = 0; j <= i; j++)
 //		{
-//			printf("%c", ++t);
+//			printf("%c", ch);
 //		}
 //		for (j = 0; j < i; j++)
 //		{
-//			printf("%c", --t);
+//			printf("%c", ch);
 //		}
 //		printf("\n");
 //	}
 //	return 0;
 //}
 
-//6.
+//2.87
 //int main(void)
 //{
-//	int i;
-//	int max, min;
-//	printf("Please enter max>:");
-//	scanf("%d", &max);
-//	printf("Please enter min>:");
-//	scanf("%d", &min);
-//	for (i = min; i <= max; i++)
+//	char ch = '*';
+//	int i, j, n;
+//	scanf("%d", &n);
+//	for (i = 0; i < n; i++)
 //	{
-//		printf("%d %d %d", i, i*i, i*i*i);
-//	}
-//	return 0;
-//}#include <stdio.h>
-
-//7.
-//#define len 20
-//int main(void)
-//{
-//	int i;
-//	char str[len];
-//	scanf("%s", str);
-//	for (i = strlen(str) - 1; i >= 0; i--)
-//	{
-//		printf("%c", str[i]);
+//		for (j = 0; j < n - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j <= n + 2 * i - 2; j++)
+//		{
+//			printf("%c",ch);
+//		}
+//		printf("\n");
 //	}
 //	return 0;
 //}
-#include <stdio.h>
-#include <math.h>
-#include <stdio.h>
 
-int main()
-{
-	float y, x, z, f;
-	for (y = 1.5f; y > -1.5f; y -= 0.1f)
-	{
-		for (x = -1.5f; x < 1.5f; x += 0.05f)
-		{
-			z = x * x + y * y - 1;
-			f = z * z*z - x * x*y*y*y;
-			putchar(f <= 0.0f ? "*********"[(int)(f*-8.0f)] : ' ');
-		}
-		putchar('\n');
-	}
-	return 0;
-}
+//2.88
+//int main(void)
+//{
+//	char ch = '*';
+//	int i, j, n;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		for (j = 1; j <= 2 * n + i - 3; j++)
+//		{
+//			if (j == n - i + 1 || j > n - i + 1 && (i == 1 || i == n))
+//				printf("*");
+//			else
+//				printf(" ");
+//		}
+//		printf("*\n");
+//	}
+//	return 0;
+//}
 

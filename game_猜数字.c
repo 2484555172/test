@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
-#include"game.h"
-
+#includeâ€œ game.hâ€
+//çŒœæ•°å­—
 
 void PLAY_game()
 {
@@ -11,19 +11,19 @@ void PLAY_game()
 	n = rand() % 100 + 1;
 	while (1)
 	{
-		printf("Çë²ÂÒ»¸ö1~100µÄÊı:>");
+		printf("è¯·çŒœä¸€ä¸ª1~100çš„æ•°:>");
 		scanf("%d", &num);
 		if (num < n)
 		{
-			printf("²ÂĞ¡ÁË!\n");
+			printf("çŒœå°äº†!\n");
 		}
 		else if (num > n)
 		{
-			printf("²Â´óÁË!\n");
+			printf("çŒœå¤§äº†!\n");
 		}
 		else
 		{
-			printf("¹§Ï²Äã,²Â¶ÔÀ².!!!\n");
+			printf("æ­å–œä½ ,çŒœå¯¹å•¦.!!!\n");
 			break;
 		}
 	}

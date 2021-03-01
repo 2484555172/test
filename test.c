@@ -1,362 +1,163 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS 
 
-//输出Hello World!
-//int main(void)  
-//{
-//	printf("**************************\n");
-//	printf("Hello World!\n");
-//	printf("**************************\n");
-//	return 0;
-//}
+#include <stdio.h>
+#include <math.h>
 
-//打印图案
-//int main(void)   
-//{
-//	printf("  *  \n");
-//	printf(" * * \n");
-//	printf("*****\n");
+
+
+
+//求1+2!+3!+...+N!的和
 //
-//	return 0;
-//}
-
-
-//[编程入门]密码破译
-//int main(void)  //密码破译,输入China
-//{               //输出Glmre
-//	char c1, c2, c3, c4, c5;
-//	scanf("%c%c%c%c%c", &c1, &c2, &c3, &c4, &c5);
-//	printf("%c%c%c%c%c", c1 + 4, c2 + 4, c3 + 4, c4 + 4, c5 + 4);
-//	return 0;
-//}
-
-//[编程入门]温度转换
-//int main(void) 
+//long long Factorial(int j)
 //{
-//	double C, F;
-//	scanf("%lf", &F);
-//	C = 5 * (F - 32) / 9;
-//	printf("%0.2lf\n", C);
-//	return 0;
-//}
-
-//求平方和
-//int main(void)  
-//{
-//	int A, B;
-//	scanf("%d %d", &A, &B);
-//	printf("%d", A*A + B * B);
-//	return 0;
-//}
-
-//求圆的面积
-//#define Pi 3.1415926
-//int main(void)     
-//{
-//	double r;
-//	scanf("%lf", &r);
-//	printf("%0.2f\n", Pi*r*r);
-//	return 0;
-//}
-
-//求长方形面积
-//int main(void)  
-//{
-//	int A, B;
-//	scanf("%d %d", &A, &B);
-//	printf("C:%d\n", 2 * (A + B));
-//	printf("S:%d\n", A*B);
-//	return 0;
-//}
-	
-//[编程入门]三个数找最大值
-//int main(void)
-//{
-//	int a, b, c;
-//	int max = 0;
-//	scanf("%d%d%d", &a, &b, &c);
-//	if (max < a)
-//		max = a;
-//	if (max < b)
-//		max = b;
-//	if (max < c)
-//		 max = c;
-//	printf("%d", max); 
-//	
-//}
-
-//[编程入门]分段函数求值
-//int main(void)
-//{
-//	int x, y;
-//	scanf("%d", &x);
-//	if (x < 1)
-//		y = x;
-//	else if (x >= 1 && x < 10)
-//		y = 2 * x - 1;
-//	else
-//		y = 3 * x - 11;
-//	printf("%d\n", y);
-//	return 0;
-//}
-
-//[编程入门]三个数字的排序
-//int  swap(int* x, int* y)
-//{
-//	int tem = 0;
-//	tem = *x;
-//	*x = *y;
-//	*y = tem;
-//	
-//}
-
-//int main(void)
-//{
-//	int a, b, c;
-//	scanf("%d %d %d", &a, &b, &c);
-//	if (a > b)
+//	if (j == 1)
 //	{
-//		swap(&a, &b);
-//	}
-//	if (a > c)
-//	{
-//		swap(&a,&c);
-//	}
-//	if (b > c)
-//	{
-//		swap(&b,&c);
-//	}
-//	printf("%d %d %d\n", a, b, c);
-//	return 0;
-//}
-
-//[编程入门]成绩评定	
-
-//int main(void)
-//{
-//	int a;
-//	scanf("%d", &a);
-//	if (a >= 0 && a <= 100)
-//	{
-//		if (a >= 90 && a <= 100)
-//			printf("A");
-//		if (a <= 80 && a >= 89)
-//			printf("B");
-//		if (a <= 70 && a >= 79)
-//			printf("C");
-//		if (a <= 60 && a >= 69)
-//			printf("D");
-//		if (a < 60)
-//			printf("E");
+//		return 1;
 //	}
 //	else
-//		printf("输入错误\n");
-//	return 0;
+//	{
+//		return j * Factorial(j - 1);
+//	}
 //}
-
-//[编程入门]数字的处理与判断	
-
-//[编程入门]利润计算
-
-//#define LEN  999
-//int main()
+//
+//int main(void)
 //{
 //	int n;
-//	int sum = 0;
-//	int arr[LEN];
+//	long long S = 0;
 //	scanf("%d", &n);
-//	for (int i = 0; i < n; i++)
+//	if (n <= 20&&n>0)
 //	{
-//		scanf("%d", &arr[i]);
-//	}
-//	for (int j = 0; j < n; j++)
-//	{
-//		if (arr[j] % 2 == 0)
-//			sum = sum + arr[j];
-//	}
-//	printf("%d\n", sum);
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	int n, i;
-//	int j = 0;
-//	int sum = 0;
-//	scanf("%d", &n);
-//	for (i = 1; i <= n; i++)
-//	{
-//		j = 3 * i - 1;
-//		sum += j;
-//	}
-//	printf("%d", sum);
-//	return 0;
-//}
-
-//[编程入门]求和训练
-//int main(void)
-//{
-//	int a, b, c, n;
-//	float i, j, k;
-//	i = 0; j = 0; k = 0;
-//	scanf("%d%d%d", &a, &b, &c);
-//	for (n = 1; n <= a; n++)
-//	{
-//		i += n;
-//	}
-//	for (n = 1; n <= b; n++)
-//	{
-//		j += n * n;
-//	}
-//	for (n = 1; n <= c; n++)
-//	{
-//		k += 1.0 / n;
-//	}
-//	printf("%0.2f", i + j + k);
-//	return 0;
-//}
-
-//[编程入门]最大公约数与最小公倍数
-//int GCD(int x, int y)  //欧几里得算法  /  辗转相除法
-//{
-//	if (y == 0)
-//	{
-//		return x;
-//	}
-//	else
-//		return GCD(y, x%y);
-//}
-//
-//int LCM(int x, int y)
-//{
-//	return y / x;
-//}
-//int main(void)
-//{
-//	int m, n, a;
-//	int ret1 = 0;
-//	int ret2 = 0;
-//	scanf("%d%d", &m, &n);
-//	a = m * n;
-//	ret1 = GCD(m, n);
-//	ret2 = LCM(ret1,a);
-//	printf("%d %d", ret1,ret2);
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	int N, i;
-//	float sum = 0;
-//	float	m = 1.0, n = 2.0;
-//	int t = 0;
-//	scanf("%d", &N);
-//	for (i = 1; i <= N; i++)
-//	{
-//		sum = sum + n / m;
-//		t = m;
-//		m = n;
-//		n = t + n;
-//	}
-//	printf("%0.2f", sum);
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	int N, i;
-//	float Sum = 0;
-//	float sum = 0;
-//	float M = 0;
-//	float m = 0;
-//	scanf("%f%d", &M, &N);
-//	m = M;
-//	for (i = 1; i <= N; i++)
-//	{
-//		sum = sum + M;
-//		M = M / 2;
-//	}
-//	Sum = (sum - m) * 2 + m;
-//	printf("%0.2f %0.2f", M, Sum);
-//	return 0;
-//}
-
-
-//int main(void)
-//{
-//	int N, i;
-//	int sum = 1;
-//	scanf("%d", &N);
-//	for (i = 1; i < N; i++)
-//	{
-//		sum = (sum + 1) * 2;
-//	}
-//	printf("%d", sum);
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	int a;
-//	int i, j, k,l;
-//	scanf("%d", &a);
-//	if (a <= 999)
-//	{
-//		i = a % 10;
-//		j = a / 10;
-//		k = j % 10;
-//		l = j / 10;
-//	}
-//	printf("%d %d %d",i, k,l );
-//	return 0;
-//}
-
-//int main(void)
-//{
-//	int i, j;
-//	for (i = 1; i <= 9; i++)
-//	{
-//		for (j = 1; j <= i; j++)
+//		for (int i = 1; i <= n; i++)
 //		{
-//			
+//			S += Factorial(i);
+//		}
+//	}
+//	printf("%lld", S);
+//	return 0;
+//}
+
+
+
+
+/*角谷猜想:日本一位中学生发现一个奇妙的“定理”,请角谷教授证明,
+而教授无能为力，于是产生角谷猜想猜想的内容是：任给一个自然数，若为偶数除以2,
+若为奇数则乘3加1,得到一个新的自然数后按照上面的法则继续演算,
+若干次后得到的结果必然为1。请编程验证:*/
+
+//int main(void)
+//{
+//
+//	int n;
+//	int a = 1;
+//	int b = 2;
+//	int c = 3;
+//	scanf("%d", &n);
+//	while (n != 1)
+//	{
+//		if (n % 2 == 0)
+//		{
+//			printf("%d/%d=%d\n", n, b, n / b);
+//			n = n / 2;
+//		}
+//		else
+//		{
+//			printf("%d*%d+%d=%d\n", n, c, a, n*c + a);
+//			n = 3 * n + 1;
+//		}
+//	}
+//	return 0;
+//}
+
+
+// 验证尼科彻斯定理,即：任何一个整数m的立方都可以写成m个连续奇数之和
+
+//#define M 100
+//void Print(int arr[M],int j,int m)
+//{
+//
+//	printf("%d", arr[j]);
+//	if (j < m - 1)
+//	{
+//		printf("+");
+//	}
+//}
+//int main(void)
+//{
+//	int m;
+//	int S = 0;
+//	scanf("%d", &m);
+//	int a = m * (m - 1) + 1;
+//	int arr[M];
+//	arr[0] = a;
+//	for (int i =0;i<m;i++)
+//	{
+//		S += a;
+//		 a+= 2;
+//		 arr[i+1] = a;
+//	}
+//	printf("%d*%d*%d=%d=", m, m, m, S);
+//	for (int j = 0; j < m; j++)
+//	{
+//		Print(arr,j,m);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+//按递增顺序依次列出所有分母为40，分子小于40的最简分数
+
+//int main(void)
+//{
+//	for (int i = 1; i < 40; i++)
+//	{
+//		if (i % 2 != 0 && i % 5 != 0)
+//		{
+//			printf("%d/40,", i);
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+
+
+/*一个自然数被8除余1,所得的商被8除也余1,再将第二次的商被8除后余7, 最后得到一个商为a
+又知这个自然数被17除余4.所得的商被17除余15,最后得到一个商是a的2倍求这个自然数*/
+
+//int main(void)
+//{
+//	int n = 0;
+//	for (int a = 1; a < 10; a++)
+//	{
+//		if ((64 * a + 57) * 8 + 1 == (34 * a + 15) * 17 + 4)
+//		{
+//			n = (64 * a + 57) * 8 + 1;
+//			printf("%d", n);
+//		}
+//	}
+//
+//	return 0;
+//}
+
+
+//int main(void)
+//{
+//	for (int i = 1; i < 9; i++)
+//	{
+//		for (int j = 1; j <= i; j++)
+//		{
 //			printf("%d*%d=%-3d", i, j, i*j);
-//			printf(" ");
 //		}
 //		printf("\n");
 //	}
+//	return 0;
 //}
 
-//int main(void)
-//{
-//	int i;
-//	for (i = 10; i <= 1000; i++)
-//	{
-//		if (i % 2 == 0 && i % 3 == 0 && i % 7 == 0)
-//			printf("%d\n", i);
-//	}
-//
-//}
 
-int main(void)
-{
-	int arr[20];
-	int i=0;
-	int count = 0;
-	float sum = 0;
-	float j = 0.0;
-	float k = 0.0;
-	scanf("%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4], &arr[5], &arr[6], &arr[7], &arr[8], &arr[9], &arr[10], &arr[11], &arr[12], &arr[13], &arr[14], &arr[15], &arr[16], &arr[17], &arr[18], &arr[19]);
-	for (i = 0; i < 20; i++)
-	{
-		if (arr[i] < 0)
-			count++;
-		else
-			sum = sum + arr[i];
-	}
-	j = 20 - count;
-	k = sum / j;
-	printf("%d\n", count);
-	printf("%0.2f", k);
-
-	return 0;
-}
